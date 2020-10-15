@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.RegisterPage"
+    android:background="@drawable/backgroundbash"
+    tools:ignore="Autofill">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRegister"
+        android:layout_width="347dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="241dp"
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/logo_transparent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/HR_FirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/fieldbackground"
+                android:ems="10"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/HR_lastname"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/fieldbackground"
+                android:ems="10"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/HR_gender"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/fieldbackground"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/HR_userName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/fieldbackground"
+            android:ems="10"
+            android:hint="@string/hr_username"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/HR_Email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/fieldbackground"
+            android:ems="10"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/HR_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/fieldbackground"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/HR_SpinnerCountry"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/fieldbackground"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/HR_phone"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/fieldbackground"
+                android:ems="10"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/RegButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/buttoncolorround"
+            android:text="@string/register" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
