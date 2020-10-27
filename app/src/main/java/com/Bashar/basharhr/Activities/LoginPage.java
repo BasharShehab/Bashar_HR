@@ -37,7 +37,6 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         register.setOnClickListener(this);
 
         sqLiteHelper = new MySQLiteDatabase(this);
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -68,10 +67,11 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                 return true;
 
             case R.id.startMusic:
-
+                startService(new Intent(this, MyService.class));
                 return true;
 
             case R.id.stopMusic:
+                stopService(new Intent(this, MyService.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
