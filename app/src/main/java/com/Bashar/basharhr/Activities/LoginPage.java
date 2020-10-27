@@ -1,10 +1,15 @@
 package com.Bashar.basharhr.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +24,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     private boolean doubleBackToExitPressedOnce;
     private MySQLiteDatabase sqLiteHelper;
     String user, pass;
+    Uri uri = Uri.parse("android.resource://com.Bashar.basharhr/"+ R.raw.elevatormusic);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +36,46 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         login.setOnClickListener(this);
         register.setOnClickListener(this);
 
-        user = username.getText().toString().trim();
-        pass = password.getText().toString().trim();
-
         sqLiteHelper = new MySQLiteDatabase(this);
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.pagemenu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itemAddEmployee:
+                setVisible(false);
+                Intent addEmp = new Intent (this, AddingEmployee.class);
+                startActivity(addEmp);
+                return true;
+            case R.id.itemRemoveEmployee:
+                setVisible(false);
+                Toast.makeText(this, "Placeholder until I make remove employee activity", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.about:
+                Intent moveToAbout = new Intent(this, About.class);
+                startActivity(moveToAbout);
+                return true;
+            case R.id.search_button:
+                setVisible(false);
+                return true;
+
+            case R.id.startMusic:
+
+                return true;
+
+            case R.id.stopMusic:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
     }
 
@@ -42,7 +84,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         switch(view.getId()){
             case R.id.login:
                 try {
-                    if (sqLiteHelper.checkLogin(username.getText().toString(),  password.getText().toString()) ) {
+                    if (sqLiteHelper.checkLogin(username.getText().toString().trim(),  password.getText().toString().trim()) ) {
                         Intent loggingIn = new Intent(LoginPage.this, MainPage.class);
                         startActivity(loggingIn);
                     } else {

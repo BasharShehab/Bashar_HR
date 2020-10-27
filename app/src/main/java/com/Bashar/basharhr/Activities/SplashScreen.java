@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import com.Bashar.basharhr.R;
 import java.io.IOException;
+import java.util.Objects;
 
 public class SplashScreen extends AppCompatActivity {
     Uri uri = Uri.parse("android.resource://com.Bashar.basharhr/"+ R.raw.splashsound);
@@ -15,7 +16,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.splashscreen);
 
         music = new MediaPlayer();
@@ -48,8 +49,6 @@ public class SplashScreen extends AppCompatActivity {
             }
         };
         timer.start();
-
-
     }
 
     public void nextActivity(){

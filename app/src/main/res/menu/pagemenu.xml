@@ -5,21 +5,31 @@
     <item android:id="@+id/itemAddEmployee"
         android:icon="@drawable/ic_addemployee"
         android:title="@string/add_new_employee"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always"
         />
     <item android:id="@+id/itemRemoveEmployee"
         android:icon="@drawable/ic_employeeremove"
         android:title="@string/remove_employee"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always"
         />
     <item android:id="@+id/about"
         android:icon="@drawable/ic_addemployee"
         android:title="@string/about"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="never"
         />
     <item android:id="@+id/search_button"
         android:icon="@drawable/ic_search"
         android:title="@string/search"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="ifRoom"
         app:actionViewClass="android.widget.SearchView" />
+
+    <item android:id="@+id/startMusic"
+        android:icon="@drawable/ic_baseline_music_note_24"
+        android:title="@string/start_music"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/stopMusic"
+        android:icon="@drawable/ic_baseline_music_off_24"
+        android:title="@string/stop_music"
+        app:showAsAction="ifRoom" />
 </menu>

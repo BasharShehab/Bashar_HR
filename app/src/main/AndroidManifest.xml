@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.Bashar.basharhr">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name="com.Bashar.basharhr.Classes.NotificationChannels"
         android:icon="@mipmap/ic_launcher"

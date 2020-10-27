@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.Bashar.basharhr.R;
 
 public class MainPage extends AppCompatActivity {
+
     private boolean doubleBackToExitPressedOnce;
 
     @Override
@@ -27,19 +28,6 @@ public class MainPage extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.pagemenu, menu);
 
-        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
-            @Override
-            public boolean onMenuItemActionExpand(MenuItem item) {
-                Toast.makeText(MainPage.this,"place holder until I make db of employees",Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-            @Override
-            public boolean onMenuItemActionCollapse(MenuItem item) {
-                Toast.makeText(MainPage.this,"COLLAPSED. place holder until I make db of employees",Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        };
         return true;
     }
 
@@ -58,7 +46,13 @@ public class MainPage extends AppCompatActivity {
                 startActivity(moveToAbout);
                 return true;
             case R.id.search_button:
+                return true;
 
+            case R.id.startMusic:
+                return true;
+
+            case R.id.stopMusic:
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
