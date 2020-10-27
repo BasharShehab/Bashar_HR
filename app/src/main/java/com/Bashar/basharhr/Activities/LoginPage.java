@@ -17,7 +17,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     Button register, login;
     EditText username, password;
     private boolean doubleBackToExitPressedOnce;
-    MySQLiteDatabase sqLiteHelper;
+    private MySQLiteDatabase sqLiteHelper;
     String user, pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,8 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         user = username.getText().toString().trim();
         pass = password.getText().toString().trim();
 
+        sqLiteHelper = new MySQLiteDatabase(this);
+
     }
 
     @Override
@@ -40,7 +42,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         switch(view.getId()){
             case R.id.login:
                 try {
-                    if (sqLiteHelper.checkLogin( user, pass) ) {
+                    if (sqLiteHelper.checkLogin(username.getText().toString(),  password.getText().toString()) ) {
                         Intent loggingIn = new Intent(LoginPage.this, MainPage.class);
                         startActivity(loggingIn);
                     } else {
