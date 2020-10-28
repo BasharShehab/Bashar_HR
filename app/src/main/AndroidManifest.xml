@@ -24,6 +24,7 @@
         <activity android:name="com.Bashar.basharhr.Activities.MainPage" />
         <activity android:name="com.Bashar.basharhr.Activities.RegisterPage" />
         <activity android:name="com.Bashar.basharhr.Activities.LoginPage" />
+        <service android:enabled="true" android:name=".Activities.MyService" />
     </application>
 
 </manifest>

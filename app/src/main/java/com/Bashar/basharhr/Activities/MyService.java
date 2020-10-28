@@ -24,15 +24,16 @@ public class MyService extends Service {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         Toast.makeText(this, "Service Created!", Toast.LENGTH_SHORT).show();
 
         mediaPlayer = MediaPlayer.create(this, R.raw.elevatormusic);
         mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
     }
 
-    @Override
-    public void onStart(Intent intent, int startid){
-
+    public void startMusic(){
         mediaPlayer.start();
         Toast.makeText(this, "Music Started", Toast.LENGTH_SHORT).show();
     }

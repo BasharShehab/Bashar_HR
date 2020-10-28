@@ -28,6 +28,15 @@ public class MainPage extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.pagemenu, menu);
 
+        MenuItem item = menu.findItem(R.id.itemAddEmployee);
+                item.setVisible(true);
+
+        item = menu.findItem(R.id.itemRemoveEmployee);
+            item.setVisible(true);
+
+        item = menu.findItem(R.id.search_button);
+            item.setVisible(true);
+
         return true;
     }
 
@@ -49,9 +58,11 @@ public class MainPage extends AppCompatActivity {
                 return true;
 
             case R.id.startMusic:
+                startService(new Intent(this, MyService.class));
                 return true;
 
             case R.id.stopMusic:
+                stopService(new Intent(this, MyService.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

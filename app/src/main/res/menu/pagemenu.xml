@@ -6,11 +6,13 @@
         android:icon="@drawable/ic_addemployee"
         android:title="@string/add_new_employee"
         app:showAsAction="always"
+        android:visible="false"
         />
     <item android:id="@+id/itemRemoveEmployee"
         android:icon="@drawable/ic_employeeremove"
         android:title="@string/remove_employee"
         app:showAsAction="always"
+        android:visible="false"
         />
     <item android:id="@+id/about"
         android:icon="@drawable/ic_addemployee"
@@ -21,7 +23,8 @@
         android:icon="@drawable/ic_search"
         android:title="@string/search"
         app:showAsAction="ifRoom"
-        app:actionViewClass="android.widget.SearchView" />
+        app:actionViewClass="android.widget.SearchView"
+        android:visible="false"/>
 
     <item android:id="@+id/startMusic"
         android:icon="@drawable/ic_baseline_music_note_24"

@@ -23,7 +23,6 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     EditText username, password;
     private boolean doubleBackToExitPressedOnce;
     private MySQLiteDatabase sqLiteHelper;
-    String user, pass;
     Uri uri = Uri.parse("android.resource://com.Bashar.basharhr/"+ R.raw.elevatormusic);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +62,6 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                 startActivity(moveToAbout);
                 return true;
             case R.id.search_button:
-                setVisible(false);
                 return true;
 
             case R.id.startMusic:
