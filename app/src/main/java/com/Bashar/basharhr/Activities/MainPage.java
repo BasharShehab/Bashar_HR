@@ -2,6 +2,8 @@ package com.Bashar.basharhr.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,16 +13,44 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.Bashar.basharhr.Classes.Adapters.CardHelperClass;
+import com.Bashar.basharhr.Classes.Adapters.CardRecyclerAdapter;
 import com.Bashar.basharhr.R;
+import com.Bashar.basharhr.SQLiteDatabase.MySQLiteDatabase;
+
+import java.util.ArrayList;
 
 public class MainPage extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce;
+    RecyclerView employeeRecycler;
+    RecyclerView.Adapter adapter;
+    MySQLiteDatabase sqliteHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
+
+        employeeRecycler = findViewById(R.id.recycler_employees);
+        sqliteHelper = new MySQLiteDatabase(this);
+        recyclerEmployee();
+    }
+
+    private void recyclerEmployee() {
+        employeeRecycler.setHasFixedSize(true);
+        employeeRecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false));
+
+        ArrayList<CardHelperClass> featuredLocations = new ArrayList<>();
+
+        featuredLocations.add(new CardHelperClass(R.drawable.github,"github","asjdklasd"));
+        featuredLocations.add(new CardHelperClass(R.drawable.githubcopy,"about","fdghhs"));
+        featuredLocations.add(new CardHelperClass(R.drawable.logo_transparent,"added","asdhterv"));
+
+        adapter = new CardRecyclerAdapter(featuredLocations);
+        employeeRecycler.setAdapter(adapter);
+
     }
 
     @Override
