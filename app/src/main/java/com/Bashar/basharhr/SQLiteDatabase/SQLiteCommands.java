@@ -1,5 +1,6 @@
 package com.Bashar.basharhr.SQLiteDatabase;
 
+import android.graphics.Bitmap;
 import android.provider.BaseColumns;
 
 public class SQLiteCommands {
@@ -17,7 +18,7 @@ public class SQLiteCommands {
         public static final String DELETE = "Dismiss";
 
         public static class HR_Admins_Table implements BaseColumns {
-            public static final String TABLE_NAME = "HR_users";
+            public static final String TABLE_NAME = "hr_users";
             public static final String FIRST_NAME = "first_name";
             public static final String LAST_NAME = "last_name";
             public static final String HR_ADMIN_ID = "HR_Id";
@@ -32,16 +33,18 @@ public class SQLiteCommands {
         public static class Employees_Table implements BaseColumns {
 
             public static final String TABLE_NAME = "Employees";
-            public static final String EMP_ID = "EMP_id";
+            public static final String EMP_ID = "emp_id";
             public static final String FIRST_NAME = "first_name";
             public static final String LAST_NAME = "last_name";
             public static final String FATHER_NAME = "father_name";
-            public static final String PHONE = "Emp_phone";
+            public static final String PHONE = "emp_phone";
             public static final String BIRTH_DATE = "emp_birth_date";
-            public static final String DEPARTMENT = "Emp_department";
+            public static final String DEPARTMENT = "emp_department";
             public static final String COUNTRY_CODE = "country_code";
             public static final String GENDER = "gender";
             public static final String EMAIL = "Emp_Email";
+            public static final String IMAGE = "image";
+
         }
     }
 

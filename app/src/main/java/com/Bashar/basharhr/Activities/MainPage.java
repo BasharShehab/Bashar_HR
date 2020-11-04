@@ -13,7 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.Bashar.basharhr.Classes.Adapters.CardHelperClass;
+import com.Bashar.basharhr.Classes.Adapters.Employees;
 import com.Bashar.basharhr.Classes.Adapters.CardRecyclerAdapter;
 import com.Bashar.basharhr.R;
 import com.Bashar.basharhr.SQLiteDatabase.MySQLiteDatabase;
@@ -26,27 +26,32 @@ public class MainPage extends AppCompatActivity {
     RecyclerView employeeRecycler;
     RecyclerView.Adapter adapter;
     MySQLiteDatabase sqliteHelper;
+    ArrayList<com.Bashar.basharhr.DataModels.Employees> employees;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
-
-        employeeRecycler = findViewById(R.id.recycler_employees);
-        sqliteHelper = new MySQLiteDatabase(this);
         recyclerEmployee();
+        sqliteHelper = new MySQLiteDatabase(this);
     }
 
     private void recyclerEmployee() {
+        employeeRecycler = findViewById(R.id.recycler_employees);
         employeeRecycler.setHasFixedSize(true);
-        employeeRecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false));
+        employeeRecycler.setLayoutManager(new LinearLayoutManager(
+                this,LinearLayoutManager.VERTICAL, false));
 
-        ArrayList<CardHelperClass> featuredLocations = new ArrayList<>();
+        employees = sqliteHelper.listContacts();
+        if (employees.size() > 0 ) {
 
-        featuredLocations.add(new CardHelperClass(R.drawable.github,"github","asjdklasd"));
-        featuredLocations.add(new CardHelperClass(R.drawable.githubcopy,"about","fdghhs"));
-        featuredLocations.add(new CardHelperClass(R.drawable.logo_transparent,"added","asdhterv"));
+        }
+        ArrayList<Employees> featuredLocations = new ArrayList<>();
+//        featuredLocations = sqliteHelper.listContacts();
+//        featuredLocations.add(new Employees(R.drawable.github,"github","asjdklasd"));
+//        featuredLocations.add(new Employees(R.drawable.githubcopy,"about","fdghhs"));
+//        featuredLocations.add(new Employees(R.drawable.logo_transparent,"added","asdhterv"));
 
         adapter = new CardRecyclerAdapter(featuredLocations);
         employeeRecycler.setAdapter(adapter);
